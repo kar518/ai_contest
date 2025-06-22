@@ -23,7 +23,7 @@ class Generator(torch.nn.Module):
 # Load trained model
 device = 'cpu'
 generator = Generator().to(device)
-generator.load_state_dict(torch.load('generator_mnist.pth', map_location=device))
+generator.load_state_dict(torch.load('generator_mnist.pth', map_location=device, weights_only=True))
 generator.eval()
 
 st.title("Handwritten Digit Generator")
